@@ -1,2 +1,14 @@
-##it need to install xorgxrdp and xrdp
-apt install xorgxrdp xrdp -y
+###it need to install xorgxrdp and xrdp
+#apt install xorgxrdp xrdp -y
+###this line from xfce4 GUI install
+apt update&&apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils xrdp -y
+
+adduser xrdp ssl-cert  
+###set xrdp use xfce4 GUI
+cd /etc/xrdp
+echo "exec startxfce4" >> xrdp.ini
+systemctl restart xrdp
+
+### chromium fix
+sudo apt-cache policy chromium
+sudo apt-get install chromium=53.0.2785.143-1.1linarostretch1
