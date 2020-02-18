@@ -26,3 +26,6 @@ sudo python3 setup.py install
 
 ### cudatext textedi-onARM
 http://uvviewsoft.com/cudatext/download.html
+
+### VS-Code install // run on root
+. <( wget -O - https://code.headmelted.com/installers/apt.sh )
