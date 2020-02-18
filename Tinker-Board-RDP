@@ -18,3 +18,11 @@ sudo apt-get install chromium=53.0.2785.143-1.1linarostretch1
 ### pip3 and Flask install
 apt install cmake gcc g++  libxml2 libxml2-* leveldb* python-dev python3-dev python-setuptools python3-setuptools -y
 pip3 install wheel Flask
+
+### python GPIO
+git clone https://github.com/TinkerBoard/gpio_lib_python
+cd gpio_lib_python
+sudo python3 setup.py install
+
+### cudatext textedi-onARM
+http://uvviewsoft.com/cudatext/download.html
