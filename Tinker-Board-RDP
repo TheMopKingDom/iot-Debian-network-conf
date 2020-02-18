@@ -1,3 +1,5 @@
+### Base on linux debian 9 32Bit_ARM
+
 ###it need to install xorgxrdp and xrdp
 #apt install xorgxrdp xrdp -y
 ###this line from xfce4 GUI install
@@ -12,3 +14,7 @@ systemctl restart xrdp
 ### chromium fix
 sudo apt-cache policy chromium
 sudo apt-get install chromium=53.0.2785.143-1.1linarostretch1
+
+### pip3 and Flask install
+apt install cmake gcc g++  libxml2 libxml2-* leveldb* python-dev python3-dev python-setuptools python3-setuptools -y
+pip3 install wheel Flask
