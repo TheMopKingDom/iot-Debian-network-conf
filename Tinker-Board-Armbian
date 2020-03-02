@@ -1,0 +1,32 @@
+##Modify /etc/network/interfaces
+
+auto eth0
+iface eth0 inet static
+  address 192.168.44.144
+  netmask 255.255.255.0
+  
+ #user : root - password : 1234
+ 
+ sudo iwlist <your iw.hwadd> scan | grep ESSID
+ wpa_passphrase <your-ESSID> <your-wifi-passphrase> | sudo tee /etc/wpa_supplicant/wpa_supplicant.conf
+ ###
+sudo wpa_supplicant -c /etc/wpa_supplicant.conf -i <your iw.hwadd>
+###
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=TH
+
+network={
+        ssid=<your SSID>
+        psk=<pass plantext>
+        #psk=a67581114360b95ac64e4423b15d2630fb97bdac76f092529618dfad1e01fbd0
+        #proto=RSN
+        key_mgmt=WPA-PSK
+        #group=CCMP
+        #pairwise=CCMP
+}
+###
+dhclient <your iw.hwadd>
+systemctl stop wpa
+  
+  
