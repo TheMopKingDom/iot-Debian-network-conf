@@ -21,7 +21,7 @@ network={
         psk=<pass plantext>
         #psk=a67581114360b95ac64e4423b15d2630fb97bdac76f092529618dfad1e01fbd0
         #proto=RSN
-        key_mgmt=WPA-PSK
+        key_mgmt=WPA-Pxorgxrdp xrdpSK
         #group=CCMP
         #pairwise=CCMP
 }
@@ -30,3 +30,12 @@ dhclient <your iw.hwadd>
 systemctl stop wpa
   
   
+###xrdp install xfoc11
+apt update&&apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils xorgxrdp xrdp -y
+###xrdp check status
+sudo systemctl status xrdp
+###add user xrdp to ssl-group
+sudo adduser xrdp ssl-cert
+###user xfoc11 in xrdp
+sudo echo -c "exec startxfce4" >> /etc/xrdp/xrdp.ini
+sudo systemctl restart xrdp
