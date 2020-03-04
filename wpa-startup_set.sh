@@ -8,13 +8,13 @@
     sudo -s
 	cd /etc/wpa_supplicant
 	touch wpa_supplicant.conf
-	echo -e "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" >> wpa_supplicant.conf
-	echo -e "country=TH" >> wpa_supplicant.conf
-	echo -e "network={" >> wpa_supplicant.conf
-	echo -e "ssid=\"$1\"" >> wpa_supplicant.conf
-	echo -e "psk=\"$2\"" >> wpa_supplicant.conf
-	echo -e "key_mgmt=WPA-PSK" >> wpa_supplicant.conf
-	echo -e "}" >> wpa_supplicant.conf
+	echo  "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" >> wpa_supplicant.conf
+	echo  "country=TH" >> wpa_supplicant.conf
+	echo  "network={" >> wpa_supplicant.conf
+	echo  "ssid=\"$1\"" >> wpa_supplicant.conf
+	echo  "psk=\"$2\"" >> wpa_supplicant.conf
+	echo  "key_mgmt=WPA-PSK" >> wpa_supplicant.conf
+	echo  "}" >> wpa_supplicant.conf
 	exit
 #else
 #	echo "erro find"
